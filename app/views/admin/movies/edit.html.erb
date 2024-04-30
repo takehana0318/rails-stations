@@ -23,4 +23,8 @@
     <div>
         <%= form.submit %>
     </div>
+    <div>
+        <%= link_to "Delete", admin_movie_path(@movie.id),
+            method: :delete, data: {confirm: "Is it OK to delete?"} %>
+    </div>
 <% end %>

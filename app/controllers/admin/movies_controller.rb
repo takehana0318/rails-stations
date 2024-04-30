@@ -31,6 +31,17 @@ class Admin::MoviesController < ApplicationController
         end 
     end
 
+    def destroy
+        @movie = Movie.find_by(id: [params[:id]])
+        begin
+            @movie.destroy
+            flash[:success] = "Success to delete"
+            redirect_to admin_movies_path
+        rescue => e
+            raise ActiveRecord::RecordNotFound
+        end
+    end
+
     private
 
     def movie_params

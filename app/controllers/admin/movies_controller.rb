@@ -17,6 +17,20 @@ class Admin::MoviesController < ApplicationController
         end
     end
 
+    def edit
+        @movie = Movie.find_by(id: [params[:id]])
+    end
+
+    def update
+        @movie = Movie.find_by(id: [params[:id]])
+        if @movie.save
+            redirect_to admin_movies_path
+        else
+            flash.now[:notice] = "Failed to Post"
+            redirect_to edit_admin_movie_path
+        end 
+    end
+
     private
 
     def movie_params

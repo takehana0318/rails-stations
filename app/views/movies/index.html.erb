@@ -1,12 +1,23 @@
+<%= form_with url: "/movies", method: :get do |form| %>
+    <%= form.label :keyword, "Search for" %>
+    <%= form.text_field :keyword %>
+    <%= form.radio_button :is_showing, "2" %>
+    <%= form.label :is_showing, "すべて" %>
+    <%= form.radio_button :is_showing, "0" %>
+    <%= form.label :is_showing, "公開予定" %>
+    <%= form.radio_button :is_showing, "1" %>
+    <%= form.label :is_showing, "公開中" %>
+    <%= form.submit "Search" %>
+<% end %>
 <table border="1">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Movie Title</th>
+            <th>タイトル</th>
             <th>公開年</th>
-            <th>上映中か</th>
             <th>概要</th>
             <th>画像URL</th>
+            <th>上映中</th>
             <th>作成日時</th>
             <th>更新日時</th>
         </tr>

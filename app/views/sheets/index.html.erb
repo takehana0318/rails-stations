@@ -1,0 +1,12 @@
+<h1>座席一覧</h1>
+<table border="1">
+    <tbody>
+        <% for x in @array %>
+            <tr>
+                <% for y in 0..@yoko %>
+                    <td><%= "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}" %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

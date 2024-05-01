@@ -7,6 +7,10 @@ class Admin::MoviesController < ApplicationController
         @movie = Movie.new
     end
 
+    def show
+        @movie = Movie.find_by(id: [params[:id]])
+    end
+
     def create
         @movie = Movie.new(movie_params)
         if @movie.save

@@ -1,0 +1,16 @@
+<h2>スケジュール詳細</h2>
+<%= form_with model: [ :admin, @schedule ], url: "/movies/#{@schedule.movie_id}/schedules/#{params[:id]}" do |form| %>
+    <div>
+        <%= form.label :name, "開始時刻" %><br>
+        <%= form.text_field :start_time %><br>
+    </div>
+    <div>
+        <%= form.label :name, "終了時刻" %><br>
+        <%= form.text_field :end_time %><br>
+    </div>
+    <div>
+        <%= form.submit %><br>
+    </div>
+<% end %>
+<%= button_to 'Destroy', "/schedules/#{@schedule.id}",
+    method: "delete", data: { confirm: 'Sure?' } %>

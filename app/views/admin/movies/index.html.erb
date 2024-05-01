@@ -18,7 +18,7 @@
                 <td><%= movie.name %></td>
                 <td><%= movie.year %></td>
                 <td><%= movie.description %></td>
-                <td><%=  link_to "画像", movie.image_url %></td>
+                <td><%= image_tag movie.image_url %></td>
                 <td>
                     <% if movie.is_showing %>
                         上映中
@@ -32,3 +32,28 @@
         <% end %>
     </tbody>
 </table>
+<% @movies.each do |movie| %>
+    <h2><%= "#{movie.id} #{movie.name}" %></h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>作品ID</th>
+                <th>開始時刻</th>
+                <th>終了時刻</th>
+                <th>作成日時</th>
+                <th>更新日時</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% movie.schedules.each do |schedule| %>
+                <tr>
+                    <td><%= link_to schedule.movie_id, admin_schedule_path(schedule.id) %></td>
+                    <td><%= schedule.start_time %></td>
+                    <td><%= schedule.end_time %></td>
+                    <td><%= schedule.created_at %></td>
+                    <td><%= schedule.updated_at %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+<% end %>

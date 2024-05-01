@@ -12,6 +12,11 @@ class MoviesController < ApplicationController
       @movies = @movies.where("name LIKE? or description LIKE?", 
                               "%#{params[:keyword]}%", "%#{params[:keyword]}%")
     end
-
   end
+
+  def show
+    @movie = Movie.find(params[:id])
+    @schedules = @movie.schedules.all
+  end
+
 end

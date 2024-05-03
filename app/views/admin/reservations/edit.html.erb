@@ -1,0 +1,26 @@
+<h1>Edit Movies</h1>
+<%= form_with model: @reservation do |form| %>
+    <div>
+        <%= form.label :name, "予約者氏名" %><br>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :email, "予約者メールアドレス" %><br>
+        <%= form.text_field :email %>
+    </div>
+    <div>
+        <%= form.label :date, "日付" %><br>
+        <%= form.text_field :date %>
+    </div>
+    <div>
+        <%= form.label :schedule_id, "スケジュールID" %><br>
+        <%= form.text_field :schedule_id %>
+    </div>
+    <div>
+        <%= form.label :sheet_id, "シートID" %><br>
+        <%= form.text_field :sheet_id %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,24 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>映画タイトル</th>
+            <th>座席</th>
+            <th>日時</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @reservations.each do |reservation| %>
+            <tr>
+                <td><%= Schedule.find(reservation.schedule_id).movie_id %></td>
+                <td><%= Movie.find(Schedule.find(reservation.schedule_id).movie_id).name %></td>
+                <td><%= reservation.schedule_id %></td>
+                <td><%= reservation.date %></td>
+                <td><%= reservation.name %></td>
+                <td><%= reservation.email %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

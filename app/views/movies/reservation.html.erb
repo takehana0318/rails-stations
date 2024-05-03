@@ -1,0 +1,13 @@
+<h1>座席一覧</h1>
+<table border="1">
+    <tbody>
+        <% for x in @array %>
+            <tr>
+                <% for y in 0..@yoko %>
+                    <td><%= link_to "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}",
+                            "/movies/#{params[:movie_id]}/schedules/#{params[:schedule_id]}/reservations/new?sheet_id=#{x+y}&date=#{params[:date]}" %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

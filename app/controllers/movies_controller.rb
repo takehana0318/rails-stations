@@ -17,6 +17,24 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @schedules = @movie.schedules.all
+    @array = []
+    @array2 = []
+  end
+
+  def reservation
+    all_count = Sheet.count
+    row_count = Sheet.where(row: "a").count()
+    times = all_count / row_count - 1
+    @yoko = row_count - 1
+    @array = []
+    for x in 0..times
+      @array << x * row_count
+    end
+    @sheets = Sheet.all.to_a
+    @sheet = Sheet.all.to_a
+    if params[:schedule_id].nil? or params[:date].nil?
+      redirect_to movie_path(params[:movie_id]), status: 302
+    end
   end
 
 end

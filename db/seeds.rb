@@ -28,3 +28,9 @@ end
 3.times do |n|
     Screen.create!()
 end
+
+Schedule.create!(
+    movie_id: 1,
+    start_time: "2024-01-01 12:00:00",
+    end_time: "2024-01-01 14:00:00",
+)

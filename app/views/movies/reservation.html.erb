@@ -4,7 +4,7 @@
         <% for x in @array %>
             <tr>
                 <% for y in 0..@yoko %>
-                    <% if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: x+y) %>
+                    <% if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: x+y, screen_id: 3) %>
                         <td bgcolor="gray">
                             <%= "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}" %>
                         </td>

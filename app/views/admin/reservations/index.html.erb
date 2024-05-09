@@ -3,6 +3,7 @@
         <tr>
             <th>ID</th>
             <th>映画タイトル</th>
+            <th>Screen</th>
             <th>座席</th>
             <th>日時</th>
             <th>名前</th>
@@ -14,6 +15,7 @@
             <tr>
                 <td><%= Schedule.find(reservation.schedule_id).movie_id %></td>
                 <td><%= Movie.find(Schedule.find(reservation.schedule_id).movie_id).name %></td>
+                <td><%= reservation.screen_id %></td>
                 <td><%= reservation.schedule_id %></td>
                 <td><%= reservation.date %></td>
                 <td><%= reservation.name %></td>

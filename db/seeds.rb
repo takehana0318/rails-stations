@@ -24,3 +24,7 @@ for m in ["a", "b", "c"]
         )
     end
 end
+
+3.times do |n|
+    Screen.create!()
+end

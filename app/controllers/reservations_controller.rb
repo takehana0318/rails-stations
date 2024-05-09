@@ -1,6 +1,13 @@
 class ReservationsController < ApplicationController
     def create
-        @reservation = Reservation.new(reservation_params)
+        #@reservation = Reservation.new(reservation_params)
+        @reservation = Reservation.new(
+            schedule_id: params[:schedule_id],
+            sheet_id: params[:sheet_id],
+            name: params[:name],
+            email: params[:email],
+            date: params[:date]
+        )
         if @reservation.save
             redirect_to admin_movies_path
         else

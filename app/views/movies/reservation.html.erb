@@ -4,8 +4,16 @@
         <% for x in @array %>
             <tr>
                 <% for y in 0..@yoko %>
-                    <td><%= link_to "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}",
-                            "/movies/#{params[:movie_id]}/schedules/#{params[:schedule_id]}/reservations/new?sheet_id=#{x+y}&date=#{params[:date]}" %></td>
+                    <% if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: x+y) %>
+                        <td bgcolor="gray">
+                            <%= "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}" %>
+                        </td>
+                    <% else %>
+                        <td>
+                            <%= link_to "#{@sheets[x+y][:row]}-#{@sheets[x+y][:column]}",
+                                "/movies/#{params[:movie_id]}/schedules/#{params[:schedule_id]}/reservations/new?sheet_id=#{x+y}&date=#{params[:date]}" %>
+                        </td>
+                    <% end %>
                 <% end %>
             </tr>
         <% end %>

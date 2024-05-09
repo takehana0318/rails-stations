@@ -1,9 +1,10 @@
 class ReservationsController < ApplicationController
+    before_action :authenticate_user!
     def create
         #@reservation = Reservation.new(reservation_params)
         screen = 1
         for n in 1..3
-            if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: params[:sheet_id: params[:sheet_id]], screen_id: n)
+            if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: params[:sheet_id], screen_id: n)
                 screen = n + 1
             end
         end

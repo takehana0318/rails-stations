@@ -1,4 +1,5 @@
 <h2>座席予約フォーム</h2>
+<span>Login user : <%= current_user.name %></span>
 <%= form_with model: @reservation,
     url: "/reservations/" do |form| %>
 
@@ -6,14 +7,8 @@
     <%= form.hidden_field :schedule_id, value: params[:schedule_id] %>
     <%= form.hidden_field :sheet_id, value: params[:sheet_id] %>
     <%= form.hidden_field :date, value: params[:date] %>
-    <div>
-        <%= form.label :name, "予約者氏名" %><br>
-        <%= form.text_field :name %>
-    </div>
-    <div>
-        <%= form.label :name, "予約者メールアドレス" %><br>
-        <%= form.text_field :email %>
-    </div>
+    <%= form.hidden_field :name, value: current_user.name %>
+    <%= form.hidden_field :email, value: current_user.email %>
     <div>
         <%= form.submit %>
     </div>

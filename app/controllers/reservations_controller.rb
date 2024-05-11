@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    return unless params[:schedule_id].nil? or params[:date].nil? or params[:sheet_id].nil?
+    return unless params[:schedule_id].nil? || params[:date].nil? || params[:sheet_id].nil?
 
     redirect_to movie_path(params[:movie_id]), status: 302
   end

@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
     end
     @sheets = Sheet.all.to_a
     @sheet = Sheet.all.to_a
-    return unless params[:schedule_id].nil? or params[:date].nil?
+    return unless params[:schedule_id].nil? || params[:date].nil?
 
     redirect_to movie_path(params[:movie_id]), status: 302
   end

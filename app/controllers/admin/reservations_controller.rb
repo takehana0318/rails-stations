@@ -5,7 +5,7 @@ class Admin::ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
-    if @reservation.name.nil? or @reservation.email.nil? or @reservation.schedule_id.nil? or @reservation.sheet_id.nil?
+    if @reservation.name.nil? || @reservation.email.nil? || @reservation.schedule_id.nil? || @reservation.sheet_id.nil?
       redirect_to admin_reservations_path
     end
   end

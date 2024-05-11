@@ -41,7 +41,7 @@ class Admin::MoviesController < ApplicationController
       @movie.destroy
       flash[:success] = 'Success to delete'
       redirect_to admin_movies_path
-    rescue StandardError => e
+    rescue StandardError
       raise ActiveRecord::RecordNotFound
     end
   end

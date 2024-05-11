@@ -27,7 +27,7 @@ class Admin::SchedulesController < ApplicationController
       @schedule.destroy
       flash[:success] = 'Post is deleted'
       redirect_to admin_schedules_path
-    rescue StandardError => e
+    rescue StandardError
       raise ActiveRecord::RecordNotFound
     end
   end

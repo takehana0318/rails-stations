@@ -1,7 +1,7 @@
 class SheetsController < ApplicationController
   def index
     all_count = Sheet.count
-    row_count = Sheet.where(row: "a").count()
+    row_count = Sheet.where(row: 'a').count
     times = all_count / row_count - 1
     @yoko = row_count - 1
     @array = []

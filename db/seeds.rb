@@ -7,30 +7,30 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do |n|
-    Movie.create!(
-        name: "test#{n + 1}",
-        year: "1999",
-        description: "description sample",
-        image_url: "https://yahoo.jp",
-        is_showing: true,
+  Movie.create!(
+    name: "test#{n + 1}",
+    year: '1999',
+    description: 'description sample',
+    image_url: 'https://yahoo.jp',
+    is_showing: true
+  )
+end
+
+for m in %w[a b c]
+  5.times do |n|
+    Sheet.create!(
+      column: n + 1,
+      row: m
     )
+  end
 end
 
-for m in ["a", "b", "c"]
-    5.times do |n|
-        Sheet.create!(
-            column: n+1,
-            row: m,
-        )
-    end
-end
-
-3.times do |n|
-    Screen.create!()
+3.times do |_n|
+  Screen.create!
 end
 
 Schedule.create!(
-    movie_id: 1,
-    start_time: "2024-01-01 12:00:00",
-    end_time: "2024-01-01 14:00:00",
+  movie_id: 1,
+  start_time: '2024-01-01 12:00:00',
+  end_time: '2024-01-01 14:00:00'
 )

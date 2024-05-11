@@ -1,17 +1,17 @@
 class MoviesController < ApplicationController
   def index
-    if params[:is_showing] == "1" then
-      @movies = Movie.where("is_showing": true)
-    elsif params[:is_showing] == "0" then
-      @movies = Movie.where("is_showing": false)
-    else
-      @movies = Movie.all
-    end
+    @movies = if params[:is_showing] == '1'
+                Movie.where("is_showing": true)
+              elsif params[:is_showing] == '0'
+                Movie.where("is_showing": false)
+              else
+                Movie.all
+              end
 
-    if params[:keyword]
-      @movies = @movies.where("name LIKE? or description LIKE?", 
-                              "%#{params[:keyword]}%", "%#{params[:keyword]}%")
-    end
+    return unless params[:keyword]
+
+    @movies = @movies.where('name LIKE? or description LIKE?',
+                            "%#{params[:keyword]}%", "%#{params[:keyword]}%")
   end
 
   def show
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 
   def reservation
     all_count = Sheet.count
-    row_count = Sheet.where(row: "a").count()
+    row_count = Sheet.where(row: 'a').count
     times = all_count / row_count - 1
     @yoko = row_count - 1
     @array = []
@@ -32,9 +32,8 @@ class MoviesController < ApplicationController
     end
     @sheets = Sheet.all.to_a
     @sheet = Sheet.all.to_a
-    if params[:schedule_id].nil? or params[:date].nil?
-      redirect_to movie_path(params[:movie_id]), status: 302
-    end
-  end
+    return unless params[:schedule_id].nil? or params[:date].nil?
 
+    redirect_to movie_path(params[:movie_id]), status: 302
+  end
 end

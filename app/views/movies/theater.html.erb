@@ -1,0 +1,5 @@
+<h2>劇場の座席を予約する</h2>
+<%= form_with url: "/movies/#{@movie.id}/reservation", method: :get do |form| %>
+    <%= form.select :schedule_id, @array, include_blank: "選択して下さい" %>
+    <%= form.button "座席を予約する" %>
+<% end %>

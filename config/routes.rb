@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :movies, only: %i[index show]
   resources :schedules, only: [:destroy]
   get '/movies/:movie_id/reservation', to: 'movies#reservation'
+  get '/movies/:movie_id/theater', to: 'movies#theater'
   get '/movies/:movie_id/schedules/:schedule_id/reservations/new', to: 'reservations#new'
   post '/reservations/', to: 'reservations#create'
   resources :users, only: %i[index new create edit update destroy show]

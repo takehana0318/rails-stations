@@ -25,12 +25,34 @@ for m in %w[a b c]
   end
 end
 
+2.times do |n|
+  Theater.create!(
+    name: "theater#{n + 1}"
+  )
+end
+
 3.times do |_n|
-  Screen.create!
+  Screen.create!(
+    theater_id: 1
+  )
+end
+
+3.times do |_n|
+  Screen.create!(
+    theater_id: 2
+  )
 end
 
 Schedule.create!(
   movie_id: 1,
+  theater_id: 1,
+  start_time: '2024-01-01 12:00:00',
+  end_time: '2024-01-01 14:00:00'
+)
+
+Schedule.create!(
+  movie_id: 1,
+  theater_id: 2,
   start_time: '2024-01-01 12:00:00',
   end_time: '2024-01-01 14:00:00'
 )

@@ -21,10 +21,10 @@ class ReservationsController < ApplicationController
       if @reservation.save
         redirect_to admin_movies_path
       else
-        redirect_to "/movies/#{movie_params[:movie_id]}/reservation?schedule_id=#{reservation_params[:schedule_id]}&date=#{reservation_params[:date]}" and return
+        redirect_to "/movies/#{params[:movie_id]}/reservation?schedule_id=#{params[:schedule_id]}&date=#{params[:date]}" and return
       end
     else
-      redirect_to "/movies/#{movie_params[:movie_id]}/reservation?schedule_id=#{reservation_params[:schedule_id]}&date=#{reservation_params[:date]}" and return
+      redirect_to "/movies/#{params[:movie_id]}/reservation?schedule_id=#{params[:schedule_id]}&date=#{params[:date]}" and return
     end
   end
 

@@ -51,8 +51,7 @@
 </table>
 
 <h2>予約フォーム</h2>
-<%= form_with url: "/movies/#{@movie.id}/reservation", method: :get do |form| %>
-    <%= form.select :date, @array2, include_blank: "選択して下さい" %>
-    <%= form.select :schedule_id, @array, include_blank: "選択して下さい" %>
-    <%= form.button "座席を予約する" %>
+<%= form_with url: "/movies/#{@movie.id}/theater", method: :get do |form| %>
+    <%= form.select :theater, [["theater1", 1], ["theater2", 2]], include_blank: "選択して下さい" %>
+    <%= form.button "この劇場を利用する" %>
 <% end %>

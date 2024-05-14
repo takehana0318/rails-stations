@@ -56,3 +56,10 @@ Schedule.create!(
   start_time: '2024-01-01 12:00:00',
   end_time: '2024-01-01 14:00:00'
 )
+
+Schedule.create!(
+  movie_id: 1,
+  theater_id: 2,
+  start_time: '2024-05-15 12:00:00',
+  end_time: '2024-05-15 14:00:00'
+)

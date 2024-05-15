@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :sheets, only: [:index]
   resources :movies, only: %i[index show]
   resources :schedules, only: [:destroy]
+  get '/', to: 'rankings#index'
   get '/movies/:movie_id/reservation', to: 'movies#reservation'
   get '/movies/:movie_id/theater', to: 'movies#theater'
   get '/movies/:movie_id/schedules/:schedule_id/reservations/new', to: 'reservations#new'

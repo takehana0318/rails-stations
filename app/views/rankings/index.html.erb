@@ -1,0 +1,31 @@
+<h2>Ranking</h2>
+
+<% last_rank = 0 %>
+<% i = 1 %>
+<% j = 1 %>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Ranking</th>
+            <th>Reservation Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @rankings.sort_by {|key, val| -val}.each do |id, count| %>
+            <tr>
+                <% if i == 1 %>
+                    <% last_rank != count %>
+                <% end %>
+                <% if count != last_rank %>
+                    <% j = i %>
+                <% end %>
+                <td><%= link_to Movie.find(id).name, "/movies/#{id}" %></td>
+                <td><%= j %>位</td>
+                <td><%= count %></td>
+                <% last_rank = count %>
+                <% i += 1 %>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

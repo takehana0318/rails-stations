@@ -12,6 +12,5 @@ RSpec.describe MoviesController, type: :controller do
     it 'movies(:id)に対応するレコードの情報が含まれていること' do
       expect(response.body).to include(theater.name)
     end
-
   end
 end

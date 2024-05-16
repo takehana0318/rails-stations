@@ -77,6 +77,7 @@ docker compose exec web cron start
 docker compose exec web service cron status
 docker compose exec web rails db:create
 docker compose exec web rails db:migrate
+docker compose exec web bundle exec whenever --update-crontab
 docker compose exec web yarn install // ←こちらを実行した後に「TechTrainにログインします。GitHubでサインアップした方はお手数ですが、パスワードリセットよりパスワードを発行してください」と出てくるため、ログインを実行してください。出てこない場合は、コマンドの実行に失敗している可能性があるため、TechTrainの問い合わせかRailwayのSlackより問い合わせをお願いいたします。
 ```
 

@@ -3,6 +3,7 @@ class CreateRankings < ActiveRecord::Migration[6.1]
     create_table :rankings do |t|
       t.integer :movie_id
       t.integer :count
+      t.datetime :rank_name
 
       t.timestamps
     end

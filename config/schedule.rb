@@ -16,14 +16,15 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
+# 
 
 # Learn more: http://github.com/javan/whenever
 require File.expand_path(File.dirname(__FILE__) + "/environment") # Rails.root(Railsメソッド)を使用するために必要
 rails_env = ENV['RAILS_ENV'] || :development # cronを実行する環境変数(:development, :product, :test)
 set :environment, rails_env # cronを実行する環境変数をセット
 set :output, "#{Rails.root}/log/crontab.log" # cronのログ出力用ファイル
-ENV.each { |k, v| env{k, v} }
+ENV.each { |k, v| env(k, v) }
 
-every 1.day, at: '10:16 am' do # タスクの実行間隔
+every 1.day, at: '00:01 am' do # タスクの実行間隔
   rake "remind:mail_remind" # ← rake "タスクのファイル名 : タスク名"
 end

@@ -36,78 +36,12 @@ Metrics/PerceivedComplexity:
   Exclude:
     - 'bin/bundle'
 
-# クラスの名前の設定なので気にしない
-# Offense count: 14
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/admin/movies_controller.rb'
-    - 'app/controllers/admin/reservations_controller.rb'
-    - 'app/controllers/admin/schedules_controller.rb'
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/controllers/users/passwords_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'app/controllers/users/unlocks_controller.rb'
-    - 'app/helpers/admin/movies_helper.rb'
-    - 'app/helpers/admin/reservations_helper.rb'
-    - 'app/helpers/admin/schedules_helper.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/test_helper.rb'
-
-# クラスのコメントなので不要
-# Offense count: 30
-# Configuration parameters: AllowedConstants.
-Style/Documentation:
-  Enabled: false
-
-# eachを使うべきとのことだがforで見やすい気がするので問題ない
-# Offense count: 4
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: each, for
-Style/For:
-  Exclude:
-    - 'app/controllers/movies_controller.rb'
-    - 'app/controllers/reservations_controller.rb'
-    - 'app/controllers/sheets_controller.rb'
-    - 'db/seeds.rb'
-
-# あまり関係ない話なので無視する。# frozen_string_literal: trueとすれば回避できる
-# Offense count: 95
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 # 自動生成なので無視する
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Style/GlobalStdStream:
   Exclude:
     - 'config/environments/production.rb'
-
-# 例外処理に関する書き方について。今の方が見やすいので無視
-# Offense count: 3
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: MinBodyLength, AllowConsecutiveConditionals.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/admin/reservations_controller.rb'
-    - 'app/controllers/reservations_controller.rb'
-
-# ifは前置きの方がわかりやすいので無視
-# Offense count: 3
-# This cop supports safe autocorrection (--autocorrect).
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/controllers/admin/reservations_controller.rb'
-    - 'app/controllers/reservations_controller.rb'
-    - 'bin/bundle'
 
 # 自動生成なので除外
 # Offense count: 1
@@ -170,3 +104,91 @@ Layout/LineLength:
     - 'db/schema.rb'
     - 'bin/bundle'
     - 'config/initializers/devise.rb'
+
+
+
+
+
+# ----------------------------理由があって設定---------------------------------
+# クラスの名前の設定なので気にしない
+# Offense count: 14
+# This cop supports unsafe autocorrection (--autocorrect-all).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: nested, compact
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/admin/movies_controller.rb'
+    - 'app/controllers/admin/reservations_controller.rb'
+    - 'app/controllers/admin/schedules_controller.rb'
+    - 'app/controllers/users/confirmations_controller.rb'
+    - 'app/controllers/users/omniauth_callbacks_controller.rb'
+    - 'app/controllers/users/passwords_controller.rb'
+    - 'app/controllers/users/registrations_controller.rb'
+    - 'app/controllers/users/sessions_controller.rb'
+    - 'app/controllers/users/unlocks_controller.rb'
+    - 'app/helpers/admin/movies_helper.rb'
+    - 'app/helpers/admin/reservations_helper.rb'
+    - 'app/helpers/admin/schedules_helper.rb'
+    - 'test/channels/application_cable/connection_test.rb'
+    - 'test/test_helper.rb'
+
+# クラスのコメントなので不要
+# Offense count: 30
+# Configuration parameters: AllowedConstants.
+Style/Documentation:
+  Enabled: false
+
+# eachを使うべきとのことだがforで見やすい気がするので問題ない
+# Offense count: 4
+# This cop supports unsafe autocorrection (--autocorrect-all).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: each, for
+Style/For:
+  Exclude:
+    - 'app/controllers/movies_controller.rb'
+    - 'app/controllers/reservations_controller.rb'
+    - 'app/controllers/sheets_controller.rb'
+    - 'db/seeds.rb'
+
+# あまり関係ない話なので無視する。# frozen_string_literal: trueとすれば回避できる
+# Offense count: 95
+# This cop supports unsafe autocorrection (--autocorrect-all).
+# Configuration parameters: EnforcedStyle.
+# SupportedStyles: always, always_true, never
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 例外処理に関する書き方について。今の方が見やすいので無視
+# Offense count: 3
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: MinBodyLength, AllowConsecutiveConditionals.
+Style/GuardClause:
+  Exclude:
+    - 'app/controllers/admin/reservations_controller.rb'
+    - 'app/controllers/reservations_controller.rb'
+
+# ifは前置きの方がわかりやすいので無視
+# Offense count: 3
+# This cop supports safe autocorrection (--autocorrect).
+Style/IfUnlessModifier:
+  Exclude:
+    - 'app/controllers/admin/reservations_controller.rb'
+    - 'app/controllers/reservations_controller.rb'
+    - 'bin/bundle'
+# 消したらエラーになる
+# Offense count: 1
+# This cop supports safe autocorrection (--autocorrect).
+# Configuration parameters: AllowMultipleReturnValues.
+Style/RedundantReturn:
+  Exclude:
+    - 'app/controllers/reservations_controller.rb'
+
+#　コードの複雑性。特に複雑と感じなかったので一旦無視
+# Offense count: 2
+# Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
+Metrics/AbcSize:
+  Max: 36
+
+Metrics/MethodLength:
+  Max: 23
+# ----------------------------理由があってExclude以外を使用---------------------------------

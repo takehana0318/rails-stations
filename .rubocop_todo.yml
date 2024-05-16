@@ -6,19 +6,3 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# 消したらエラーになる
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: AllowMultipleReturnValues.
-Style/RedundantReturn:
-  Exclude:
-    - 'app/controllers/reservations_controller.rb'
-
-#　コードの複雑性。特に複雑と感じなかったので一旦無視
-# Offense count: 2
-# Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 36
-
-Metrics/MethodLength:
-  Max: 23

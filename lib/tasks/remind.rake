@@ -7,9 +7,11 @@ namespace :remind do
     schedules = Schedule.all
     schedules.each do |schedule|
       x = schedule.start_time.to_s.split(' ')[0]
+      puts x, tomorrow_date
       remind_schedule_lists << schedule.id if x == tomorrow_date
     end
 
+    puts remind_schedule_lists
     remind_schedule_lists.each do |id|
       reservations = Reservation.where(schedule_id: id)
       reservations.each do |reservation|

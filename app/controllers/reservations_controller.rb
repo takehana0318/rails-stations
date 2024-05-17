@@ -23,8 +23,8 @@ class ReservationsController < ApplicationController
     )
     if @reservation.save
       schedule = Schedule.find(params[:schedule_id])
-      #inquiry = Inquiry.new(name: params[:name], message: "#{Theater.find(schedule.theater_id).name} #{Movie.find(params[:movie_id]).name} #{schedule.start_time}")
-      #InquiryMailer.send_mail(inquiry, params[:email]).deliver_now
+      # inquiry = Inquiry.new(name: params[:name], message: "#{Theater.find(schedule.theater_id).name} #{Movie.find(params[:movie_id]).name} #{schedule.start_time}")
+      # InquiryMailer.send_mail(inquiry, params[:email]).deliver_now
       redirect_to admin_movies_path
     else
       redirect_to "/movies/#{params[:movie_id]}/reservation?schedule_id=#{params[:schedule_id]}&date=#{params[:date]}" \

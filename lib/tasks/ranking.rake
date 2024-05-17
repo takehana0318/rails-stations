@@ -1,8 +1,8 @@
 namespace :ranking do
   desc 'Rankingを計算するタスク'
   task calc_rank: :environment do
-    puts "calc_rank start"
-    today = Date.today()
+    puts 'calc_rank start'
+    today = Date.today
     Ranking.where(rank_name: today).destroy_all
     ranking = {}
     reservations = Reservation.all
@@ -23,9 +23,9 @@ namespace :ranking do
       Ranking.create!(
         movie_id: k,
         count: v,
-        rank_name: today,
+        rank_name: today
       )
     end
-    puts "calc_rank end"
+    puts 'calc_rank end'
   end
 end

@@ -1,6 +1,7 @@
 namespace :ranking do
   desc 'Rankingを計算するタスク'
   task calc_rank: :environment do
+    puts "calc_rank start"
     today = Date.today()
     Ranking.where(rank_name: today).destroy_all
     ranking = {}
@@ -25,5 +26,6 @@ namespace :ranking do
         rank_name: today,
       )
     end
+    puts "calc_rank end"
   end
 end

@@ -13,7 +13,7 @@ class InquiryMailer < ApplicationMailer
     mail(
       from: 'system@example.com',
       to: dst_email,
-      subject: 'お問い合わせ通知'
+      subject: 'リマインド'
     )
   end
 end

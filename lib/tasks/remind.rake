@@ -19,12 +19,12 @@ namespace :remind do
         # puts reservation.schedule_id
         schedule = Schedule.find(reservation.schedule_id)
         # puts schedule.movie_id
-        movie = Movie.find(schedule.movie_id)
-        theater_name = Theater.find(schedule.theater_id)
-        screen = Screen.find(reservation.screen_id)
+        movie = Movie.find(schedule.movie_id).name
+        theater_name = Theater.find(schedule.theater_id).name
+        screen = Screen.find(reservation.screen_id).id
 
         inquiry = Inquiry.new(name: reservation.name,
-                              message: "Theater:#{theater_name.name}/Movie_title:#{movie.name}/screen:#{screen.id}/schedule:#{schedule.start_time}")
+                              message: "#{theater_name}/#{movie}/#{screen}/#{schedule.start_time}")
         InquiryMailer.remind_mail(inquiry, reservation.email).deliver_now
       end
     end

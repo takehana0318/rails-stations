@@ -7,27 +7,8 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes, Max.
-Metrics/AbcSize:
-  Exclude:
-    - 'app/controllers/reservations_controller.rb'
-
-# Offense count: 1
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
 # AllowedMethods: refine
 Metrics/BlockLength:
   Max: 28
 
-# Offense count: 1
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: Mode.
-#Style/StringConcatenation:
-#  Exclude:
-#    - 'config/schedule.rb'
-
-# Offense count: 2
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, AllowedPatterns.
-# URISchemes: http, https
-Layout/LineLength:
-  Max: 163

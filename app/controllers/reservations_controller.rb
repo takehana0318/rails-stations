@@ -24,8 +24,6 @@ class ReservationsController < ApplicationController
       schedule_id: params[:schedule_id], sheet_id: params[:sheet_id],
       screen_id: screen, name: params[:name], email: params[:email], date: params[:date]
     )
-    reservation.save
-    redirect_to admin_movies_path
     if @reservation.save
       # inquiry = Inquiry.new(name: params[:name],
       #                      message: "#{Theater.find(schedule.theater_id).name} #{Movie.find

@@ -16,7 +16,7 @@
   )
 end
 
-for m in %w[a b c]
+%w[a b c].each do |m|
   5.times do |n|
     Sheet.create!(
       column: n + 1,

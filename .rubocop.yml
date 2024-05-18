@@ -132,11 +132,6 @@ Style/ClassAndModuleChildren:
     - 'test/channels/application_cable/connection_test.rb'
     - 'test/test_helper.rb'
 
-# クラスのコメントなので不要
-# Offense count: 30
-# Configuration parameters: AllowedConstants.
-#Style/Documentation:
-#  Enabled: false
 
 # eachを使うべきとのことだがforで見やすい気がするので問題ない
 # Offense count: 4
@@ -148,7 +143,7 @@ Style/For:
     - 'app/controllers/movies_controller.rb'
     - 'app/controllers/reservations_controller.rb'
     - 'app/controllers/sheets_controller.rb'
-    - 'db/seeds.rb'
+#    - 'db/seeds.rb'
 
 # あまり関係ない話なので無視する。# frozen_string_literal: trueとすれば回避できる
 # Offense count: 95

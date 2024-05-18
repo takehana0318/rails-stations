@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # for movie
 class MoviesController < ApplicationController
   def index
@@ -29,7 +31,7 @@ class MoviesController < ApplicationController
     times = all_count / row_count - 1
     @yoko = row_count - 1
     @array = []
-    for x in 0..times
+    (0..times).each do |x|
       @array << x * row_count
     end
     @sheets = Sheet.all.to_a

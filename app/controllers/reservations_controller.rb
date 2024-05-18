@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 # for movie
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
   def calc_screen
     screen = 1
-    for n in 1..3
+    (1..3).each do |n|
       if Reservation.exists?(schedule_id: params[:schedule_id], sheet_id: params[:sheet_id], screen_id: n)
         screen = n + 1
       end
     end
-    return screen
+    screen
   end
 
   def create
@@ -25,7 +27,6 @@ class ReservationsController < ApplicationController
     reservation.save
     redirect_to admin_movies_path
     if @reservation.save
-      # schedule = Schedule.find(params[:schedule_id])
       # inquiry = Inquiry.new(name: params[:name],
       #                      message: "#{Theater.find(schedule.theater_id).name} #{Movie.find
       # (params[:movie_id]).name} #{schedule.start_time}") 改行なくす

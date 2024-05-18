@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # for movie
 class InquiryMailer < ApplicationMailer
   def send_mail(inquiry, dst_email)

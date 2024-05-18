@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # for movie
 class Reservation < ApplicationRecord
   belongs_to :schedule

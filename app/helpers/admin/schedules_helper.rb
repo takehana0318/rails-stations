@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
 # for movie
-module Admin::SchedulesHelper
+module Admin
+  # for movie
+  module SchedulesHelper
+  end
 end

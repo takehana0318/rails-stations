@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # for movie
 class RankingsController < ApplicationController
   def index

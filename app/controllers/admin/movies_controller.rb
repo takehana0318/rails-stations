@@ -1,4 +1,6 @@
+# for movie
 module Admin
+  # for movie
   class MoviesController < ApplicationController
     def index
       @movies = Movie.all

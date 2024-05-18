@@ -135,8 +135,8 @@ Style/ClassAndModuleChildren:
 # クラスのコメントなので不要
 # Offense count: 30
 # Configuration parameters: AllowedConstants.
-Style/Documentation:
-  Enabled: false
+#Style/Documentation:
+#  Enabled: false
 
 # eachを使うべきとのことだがforで見やすい気がするので問題ない
 # Offense count: 4

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# for movie
 class Users::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new

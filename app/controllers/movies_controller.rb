@@ -1,3 +1,4 @@
+# for movie
 class MoviesController < ApplicationController
   def index
     @movies = if params[:is_showing] == '1'

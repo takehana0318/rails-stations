@@ -1,3 +1,4 @@
+# for movie
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
   def calc_screen

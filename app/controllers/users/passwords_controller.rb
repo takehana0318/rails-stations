@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# for movie
 class Users::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
   # def new

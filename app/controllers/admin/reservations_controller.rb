@@ -1,3 +1,4 @@
+# for movie
 class Admin::ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all

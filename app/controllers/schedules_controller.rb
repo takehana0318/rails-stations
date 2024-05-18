@@ -1,3 +1,4 @@
+# for movie
 class SchedulesController < ApplicationController
   def destroy
     @schedule = Schedule.find_by(id: [params[:id]])

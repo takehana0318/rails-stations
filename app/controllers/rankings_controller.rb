@@ -1,3 +1,4 @@
+# for movie
 class RankingsController < ApplicationController
   def index
     @rankings = {}

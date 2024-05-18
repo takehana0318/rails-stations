@@ -117,7 +117,7 @@ Layout/LineLength:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/admin/movies_controller.rb'
+#    - 'app/controllers/admin/movies_controller.rb'
     - 'app/controllers/admin/reservations_controller.rb'
     - 'app/controllers/admin/schedules_controller.rb'
     - 'app/controllers/users/confirmations_controller.rb'

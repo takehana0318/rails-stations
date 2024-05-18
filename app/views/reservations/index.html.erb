@@ -1,0 +1,28 @@
+<h2>予約一覧</h2>
+<h3><%= current_user.email %>の予約リスト</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>映画タイトル</th>
+            <th>Schedule</th>
+            <th>劇場</th>
+            <th>Screen</th>
+            <th>座席</th>
+            <th>名前</th>
+            <th>メールアドレス</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @reservations.each do |reservation| %>
+            <tr>
+                <td><%= Movie.find(Schedule.find(reservation.schedule_id).movie_id).name %></td>
+                <td><%= Schedule.find(reservation.schedule_id).start_time %></td>
+                <td><%= Theater.find(Schedule.find(reservation.schedule_id).movie_id).name %></td>
+                <td><%= reservation.screen_id %></td>
+                <td><%= reservation.sheet_id %></td>
+                <td><%= reservation.name %></td>
+                <td><%= reservation.email %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

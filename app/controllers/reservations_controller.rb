@@ -3,6 +3,10 @@
 # for movie
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @reservations = Reservation.where(email: current_user.email).all
+  end
+
   def calc_screen
     screen = 1
     (1..3).each do |n|

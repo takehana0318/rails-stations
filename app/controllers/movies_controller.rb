@@ -34,8 +34,7 @@ class MoviesController < ApplicationController
     (0..times).each do |x|
       @array << x * row_count
     end
-    @sheets = Sheet.all.to_a
-    @sheet = Sheet.all.to_a
+
     return unless params[:schedule_id].nil?
 
     redirect_to movie_path(params[:movie_id]), status: 302

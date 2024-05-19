@@ -11,3 +11,6 @@ AllCops:
     - '**/Gemfile'
     - !ruby/regexp /old_and_unused\.rb$/
     - 'spec/**/*'
+
+Metrics/AbcSize:
+  Max: 35

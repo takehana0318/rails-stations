@@ -45,21 +45,28 @@ end
 
 Schedule.create!(
   movie_id: 1,
-  theater_id: 2,
-  start_time: '2024-05-15 12:00:00',
-  end_time: '2024-05-15 14:00:00'
+  theater_id: 1,
+  start_time: '2024-05-18 12:00:00',
+  end_time: '2024-05-18 14:00:00'
+)
+
+Schedule.create!(
+  movie_id: 2,
+  theater_id: 1,
+  start_time: '2024-05-18 12:00:00',
+  end_time: '2024-05-18 14:00:00'
 )
 
 Schedule.create!(
   movie_id: 1,
-  theater_id: 2,
-  start_time: '2024-05-16 12:00:00',
-  end_time: '2024-05-16 14:00:00'
+  theater_id: 1,
+  start_time: '2024-05-19 12:00:00',
+  end_time: '2024-05-19 14:00:00'
 )
 
 Schedule.create!(
   movie_id: 1,
-  theater_id: 2,
-  start_time: '2024-05-17 12:00:00',
-  end_time: '2024-05-17 14:00:00'
+  theater_id: 1,
+  start_time: '2024-05-20 12:00:00',
+  end_time: '2024-05-20 14:00:00'
 )

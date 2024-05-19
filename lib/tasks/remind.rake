@@ -22,9 +22,11 @@ namespace :remind do
         movie = Movie.find(schedule.movie_id).name
         theater_name = Theater.find(schedule.theater_id).name
         screen = Screen.find(reservation.screen_id).id
+        sheet_id = reservation.sheet_id
+        sheet = "#{Sheet.find(sheet_id).row}-#{Sheet.find(sheet_id).column}"
 
         inquiry = Inquiry.new(name: reservation.name,
-                              message: "#{theater_name}/#{movie}/#{screen}/#{schedule.start_time}")
+                              message: "#{theater_name}/#{movie}/#{screen}/#{schedule.start_time}/#{sheet}")
         InquiryMailer.remind_mail(inquiry, reservation.email).deliver_now
       end
     end

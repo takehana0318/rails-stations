@@ -19,25 +19,12 @@ class ReservationsController < ApplicationController
 
   def create
     screen = calc_screen
-    if screen == 4
-      redirect_to "/movies/#{params[:movie_id]}/reservation?schedule_id=#{params[:schedule_id]}&date=#{params[:date]}" \
-      and return
-    end
 
-    @reservation = Reservation.new(
+    @reservation = Reservation.create(
       schedule_id: params[:schedule_id], sheet_id: params[:sheet_id],
       screen_id: screen, name: params[:name], email: params[:email], date: params[:date]
     )
-    if @reservation.save
-      # inquiry = Inquiry.new(name: params[:name],
-      #                      message: "#{Theater.find(schedule.theater_id).name} #{Movie.find
-      # (params[:movie_id]).name} #{schedule.start_time}") 改行なくす
-      # InquiryMailer.send_mail(inquiry, params[:email]).deliver_now
-      redirect_to admin_movies_path
-    else
-      redirect_to "/movies/#{params[:movie_id]}/reservation?schedule_id=#{params[:schedule_id]}&date=#{params[:date]}" \
-      and return
-    end
+    redirect_to admin_movies_path
   end
 
   def new

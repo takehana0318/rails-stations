@@ -8,17 +8,17 @@
 
 # Offense count: 2
 # Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 34
+#Metrics/AbcSize:
+#  Max: 34
 
 # Offense count: 2
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
-Metrics/MethodLength:
-  Max: 17
+#Metrics/MethodLength:
+#  Max: 17
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: MinBodyLength, AllowConsecutiveConditionals.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/reservations_controller.rb'
+#Style/GuardClause:
+#  Exclude:
+#    - 'app/controllers/reservations_controller.rb'
